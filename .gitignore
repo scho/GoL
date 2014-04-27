@@ -5,6 +5,7 @@ build/*
 *.mode1v3
 *.xcworkspace
 xcuserdata
+*.xcuserstate
 
 # OSX Noise
 .DS_Store
