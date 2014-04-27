@@ -20,11 +20,11 @@
 		23BA1B83190D19D600C35B2F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23BA1B62190D19D600C35B2F /* Foundation.framework */; };
 		23BA1B84190D19D600C35B2F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23BA1B66190D19D600C35B2F /* UIKit.framework */; };
 		23BA1B8C190D19D600C35B2F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23BA1B8A190D19D600C35B2F /* InfoPlist.strings */; };
-		23BA1B8E190D19D600C35B2F /* GoLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BA1B8D190D19D600C35B2F /* GoLTests.m */; };
 		49EE6C87190D4928005A76CB /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EE6C86190D4928005A76CB /* Game.m */; };
 		49EE6C8A190D49D0005A76CB /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EE6C89190D49D0005A76CB /* Cell.m */; };
 		49EE6C8D190D49EF005A76CB /* CellState.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EE6C8C190D49EF005A76CB /* CellState.m */; };
 		49EE6C90190D4F75005A76CB /* CellNeighborhood.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EE6C8F190D4F75005A76CB /* CellNeighborhood.m */; };
+		49EE6C92190D5BB5005A76CB /* CellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EE6C91190D5BB5005A76CB /* CellTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +56,6 @@
 		23BA1B81190D19D600C35B2F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		23BA1B89190D19D600C35B2F /* GoLTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoLTests-Info.plist"; sourceTree = "<group>"; };
 		23BA1B8B190D19D600C35B2F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		23BA1B8D190D19D600C35B2F /* GoLTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoLTests.m; sourceTree = "<group>"; };
 		49EE6C85190D4928005A76CB /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = Model/Game.h; sourceTree = "<group>"; };
 		49EE6C86190D4928005A76CB /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Game.m; path = Model/Game.m; sourceTree = "<group>"; };
 		49EE6C88190D49D0005A76CB /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cell.h; path = Model/Cell.h; sourceTree = "<group>"; };
@@ -65,6 +64,7 @@
 		49EE6C8C190D49EF005A76CB /* CellState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellState.m; path = Model/CellState.m; sourceTree = "<group>"; };
 		49EE6C8E190D4F75005A76CB /* CellNeighborhood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellNeighborhood.h; path = Model/CellNeighborhood.h; sourceTree = "<group>"; };
 		49EE6C8F190D4F75005A76CB /* CellNeighborhood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellNeighborhood.m; path = Model/CellNeighborhood.m; sourceTree = "<group>"; };
+		49EE6C91190D5BB5005A76CB /* CellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellTests.m; path = Model/CellTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +151,6 @@
 			isa = PBXGroup;
 			children = (
 				49EE6C81190D432F005A76CB /* Model */,
-				23BA1B8D190D19D600C35B2F /* GoLTests.m */,
 				23BA1B88190D19D600C35B2F /* Supporting Files */,
 			);
 			path = GoLTests;
@@ -184,6 +183,7 @@
 		49EE6C81190D432F005A76CB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				49EE6C91190D5BB5005A76CB /* CellTests.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -298,7 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23BA1B8E190D19D600C35B2F /* GoLTests.m in Sources */,
+				49EE6C92190D5BB5005A76CB /* CellTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
