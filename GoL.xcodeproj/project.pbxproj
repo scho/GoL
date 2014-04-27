@@ -21,6 +21,7 @@
 		23BA1B84190D19D600C35B2F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23BA1B66190D19D600C35B2F /* UIKit.framework */; };
 		23BA1B8C190D19D600C35B2F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23BA1B8A190D19D600C35B2F /* InfoPlist.strings */; };
 		23BA1B8E190D19D600C35B2F /* GoLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BA1B8D190D19D600C35B2F /* GoLTests.m */; };
+		49EE6C84190D436D005A76CB /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EE6C83190D436D005A76CB /* Game.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		23BA1B89190D19D600C35B2F /* GoLTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoLTests-Info.plist"; sourceTree = "<group>"; };
 		23BA1B8B190D19D600C35B2F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		23BA1B8D190D19D600C35B2F /* GoLTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoLTests.m; sourceTree = "<group>"; };
+		49EE6C82190D436D005A76CB /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		49EE6C83190D436D005A76CB /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,7 @@
 		23BA1B68190D19D600C35B2F /* GoL */ = {
 			isa = PBXGroup;
 			children = (
+				49EE6C80190D42C7005A76CB /* Model */,
 				23BA1B71190D19D600C35B2F /* AppDelegate.h */,
 				23BA1B72190D19D600C35B2F /* AppDelegate.m */,
 				23BA1B74190D19D600C35B2F /* Main.storyboard */,
@@ -137,6 +141,7 @@
 		23BA1B87190D19D600C35B2F /* GoLTests */ = {
 			isa = PBXGroup;
 			children = (
+				49EE6C81190D432F005A76CB /* Model */,
 				23BA1B8D190D19D600C35B2F /* GoLTests.m */,
 				23BA1B88190D19D600C35B2F /* Supporting Files */,
 			);
@@ -150,6 +155,22 @@
 				23BA1B8A190D19D600C35B2F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		49EE6C80190D42C7005A76CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				49EE6C82190D436D005A76CB /* Game.h */,
+				49EE6C83190D436D005A76CB /* Game.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		49EE6C81190D432F005A76CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +272,7 @@
 				23BA1B79190D19D600C35B2F /* ViewController.m in Sources */,
 				23BA1B73190D19D600C35B2F /* AppDelegate.m in Sources */,
 				23BA1B6F190D19D600C35B2F /* main.m in Sources */,
+				49EE6C84190D436D005A76CB /* Game.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +477,7 @@
 				23BA1B93190D19D600C35B2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		23BA1B94190D19D600C35B2F /* Build configuration list for PBXNativeTarget "GoLTests" */ = {
 			isa = XCConfigurationList;
@@ -463,6 +486,7 @@
 				23BA1B96190D19D600C35B2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
