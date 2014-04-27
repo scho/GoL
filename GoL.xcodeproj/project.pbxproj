@@ -22,6 +22,8 @@
 		23BA1B8C190D19D600C35B2F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23BA1B8A190D19D600C35B2F /* InfoPlist.strings */; };
 		23BA1B8E190D19D600C35B2F /* GoLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BA1B8D190D19D600C35B2F /* GoLTests.m */; };
 		49EE6C87190D4928005A76CB /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EE6C86190D4928005A76CB /* Game.m */; };
+		49EE6C8A190D49D0005A76CB /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EE6C89190D49D0005A76CB /* Cell.m */; };
+		49EE6C8D190D49EF005A76CB /* CellState.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EE6C8C190D49EF005A76CB /* CellState.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,10 @@
 		23BA1B8D190D19D600C35B2F /* GoLTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoLTests.m; sourceTree = "<group>"; };
 		49EE6C85190D4928005A76CB /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = Model/Game.h; sourceTree = "<group>"; };
 		49EE6C86190D4928005A76CB /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Game.m; path = Model/Game.m; sourceTree = "<group>"; };
+		49EE6C88190D49D0005A76CB /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cell.h; path = Model/Cell.h; sourceTree = "<group>"; };
+		49EE6C89190D49D0005A76CB /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cell.m; path = Model/Cell.m; sourceTree = "<group>"; };
+		49EE6C8B190D49EF005A76CB /* CellState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellState.h; path = Model/CellState.h; sourceTree = "<group>"; };
+		49EE6C8C190D49EF005A76CB /* CellState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellState.m; path = Model/CellState.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +168,10 @@
 			children = (
 				49EE6C85190D4928005A76CB /* Game.h */,
 				49EE6C86190D4928005A76CB /* Game.m */,
+				49EE6C88190D49D0005A76CB /* Cell.h */,
+				49EE6C89190D49D0005A76CB /* Cell.m */,
+				49EE6C8B190D49EF005A76CB /* CellState.h */,
+				49EE6C8C190D49EF005A76CB /* CellState.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -269,10 +279,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49EE6C8A190D49D0005A76CB /* Cell.m in Sources */,
 				23BA1B79190D19D600C35B2F /* ViewController.m in Sources */,
 				23BA1B73190D19D600C35B2F /* AppDelegate.m in Sources */,
 				23BA1B6F190D19D600C35B2F /* main.m in Sources */,
 				49EE6C87190D4928005A76CB /* Game.m in Sources */,
+				49EE6C8D190D49EF005A76CB /* CellState.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
