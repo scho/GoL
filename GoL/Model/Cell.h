@@ -10,4 +10,12 @@
 
 @interface Cell : NSObject
 
+- (BOOL) isAlive;
+- (void) addNeighborCell:(Cell *)cell;
+- (void) storeNextState;
+- (void) applyNextState;
+
++ (Cell *) createAlive;
++ (Cell *) createDead;
+
 @end

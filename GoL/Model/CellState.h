@@ -14,7 +14,7 @@
 - (void) applyNextState;
 - (void) storeNextState:(BOOL)value;
 
-+ (id) createAliveState;
-+ (id) createDeadState;
++ (CellState *) createAlive;
++ (CellState *) createDead;
 
 @end

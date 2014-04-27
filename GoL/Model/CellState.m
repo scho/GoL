@@ -31,15 +31,15 @@
     _nextState = value;
 }
 
-+ (id) createAliveState{
++ (CellState *) createAlive{
     return [[self alloc] initWithCurrentState:true];
 }
 
-+ (id) createDeadState{
++ (CellState *) createDead{
     return [[self alloc] initWithCurrentState:false];
 }
 
-- (id) initWithCurrentState:(BOOL)currentState{
+- (CellState *) initWithCurrentState:(BOOL)currentState{
     self = [super init];
     if (self) {
         self.currentState = currentState;
