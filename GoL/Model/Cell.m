@@ -12,35 +12,35 @@
 
 @interface Cell()
 
-@property (strong, nonatomic) CellState *cellState;
-@property (strong, nonatomic) CellNeighborhood *cellNeighborhood;
+@property (strong, nonatomic) CellState *state;
+@property (strong, nonatomic) CellNeighborhood *neighborhood;
 
 @end
 
 @implementation Cell
 
 - (BOOL) isAlive {
-    return [self.cellState isAlive];
+    return [self.state isAlive];
 }
 
 - (void) addNeighborCell:(Cell *)cell{
-    [self.cellNeighborhood addCell:cell];
+    [self.neighborhood addCell:cell];
 }
 
 - (void) storeNextState{
-    BOOL currentState = self.cellState.isAlive;
-    BOOL nextState = [self.cellNeighborhood getNextState:currentState];
-    [self.cellState storeNextState:nextState];
+    BOOL currentState = self.state.isAlive;
+    BOOL nextState = [self.neighborhood getNextState:currentState];
+    [self.state storeNextState:nextState];
 }
 
 - (void) applyNextState{
-    [self.cellState applyNextState];
+    [self.state applyNextState];
 }
 
 - (Cell *) initWithCellState:(id)cellState{
     self = [self init];
     if (self) {
-        self.cellState = cellState;
+        self.state = cellState;
     }
     return self;
 }
@@ -48,7 +48,7 @@
 - (id) init{
     self = [super init];
     if(self){
-        self.cellNeighborhood = [[CellNeighborhood alloc] init];
+        self.neighborhood = [[CellNeighborhood alloc] init];
     }
     return self;
 }
