@@ -11,7 +11,7 @@
 
 @interface Game()
 
-@property (strong, nonatomic) NSMutableArray *rows;
+@property (strong, nonatomic) NSArray *rows;
 
 @end
 

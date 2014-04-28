@@ -26,6 +26,7 @@
 		49EE6C90190D4F75005A76CB /* CellNeighborhood.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EE6C8F190D4F75005A76CB /* CellNeighborhood.m */; };
 		49EE6C92190D5BB5005A76CB /* CellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EE6C91190D5BB5005A76CB /* CellTests.m */; };
 		49EE6C95190ED476005A76CB /* GameInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EE6C94190ED476005A76CB /* GameInitializer.m */; };
+		49EE6C98190EEA1B005A76CB /* NeighborhoodInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EE6C97190EEA1B005A76CB /* NeighborhoodInitializer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		49EE6C91190D5BB5005A76CB /* CellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellTests.m; path = Model/CellTests.m; sourceTree = "<group>"; };
 		49EE6C93190ED476005A76CB /* GameInitializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameInitializer.h; path = Model/GameInitializer.h; sourceTree = "<group>"; };
 		49EE6C94190ED476005A76CB /* GameInitializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameInitializer.m; path = Model/GameInitializer.m; sourceTree = "<group>"; };
+		49EE6C96190EEA1B005A76CB /* NeighborhoodInitializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NeighborhoodInitializer.h; path = Model/NeighborhoodInitializer.h; sourceTree = "<group>"; };
+		49EE6C97190EEA1B005A76CB /* NeighborhoodInitializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NeighborhoodInitializer.m; path = Model/NeighborhoodInitializer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +184,8 @@
 				49EE6C86190D4928005A76CB /* Game.m */,
 				49EE6C93190ED476005A76CB /* GameInitializer.h */,
 				49EE6C94190ED476005A76CB /* GameInitializer.m */,
+				49EE6C96190EEA1B005A76CB /* NeighborhoodInitializer.h */,
+				49EE6C97190EEA1B005A76CB /* NeighborhoodInitializer.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -295,6 +300,7 @@
 				23BA1B79190D19D600C35B2F /* ViewController.m in Sources */,
 				23BA1B73190D19D600C35B2F /* AppDelegate.m in Sources */,
 				23BA1B6F190D19D600C35B2F /* main.m in Sources */,
+				49EE6C98190EEA1B005A76CB /* NeighborhoodInitializer.m in Sources */,
 				49EE6C87190D4928005A76CB /* Game.m in Sources */,
 				49EE6C8D190D49EF005A76CB /* CellState.m in Sources */,
 			);
