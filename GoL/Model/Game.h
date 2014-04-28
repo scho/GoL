@@ -10,4 +10,6 @@
 
 @interface Game : NSObject
 
+- (void) tick;
+
 @end
