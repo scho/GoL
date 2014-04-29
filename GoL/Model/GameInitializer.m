@@ -24,11 +24,11 @@
 
 @implementation GameInitializer
 
-- (id) initWithInitialState:(NSArray *)initialState{
+- (id) initWithInitialState:(NSArray *)initialState andGameDimensions:(GameDimensions *) gameDimensions{
     self = [super init];
     if(self){
         self.initialState = initialState;
-        self.gameDimensions = [[GameDimensions alloc] initWithHeight:initialState.count andWidth:[[initialState objectAtIndex:0] count]];
+        self.gameDimensions = gameDimensions;
         self.field = [[NSMutableArray alloc] initWithCapacity:self.gameDimensions.height];
         
         self.neighborhoodInitializer = [[NeighborhoodInitializer alloc] initWithField:self.field andGameDimensions:self.gameDimensions];
