@@ -6,9 +6,9 @@
 //
 //
 
-#import "GameInitializer.h"
-#import "GameDimensions.h"
 #import "Cell.h"
+#import "GameDimensions.h"
+#import "GameInitializer.h"
 #import "NeighborhoodInitializer.h"
 
 @interface GameInitializer ()

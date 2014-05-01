@@ -6,8 +6,8 @@
 //
 //
 
-#import "GameRandomizer.h"
 #import "GameDimensions.h"
+#import "GameRandomizer.h"
 
 @interface GameRandomizer ()
 
