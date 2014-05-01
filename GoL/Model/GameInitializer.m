@@ -36,7 +36,7 @@
     return self;
 }
 
-- (NSArray *)initialize{
+- (NSArray *) initialize{
     
     return self.field;
 }

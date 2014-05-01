@@ -27,7 +27,7 @@
     return self;
 }
 
-- (NSArray *)randomize{
+- (NSArray *) randomize{
     [self addRows];
 
     return self.gameState;
@@ -46,7 +46,7 @@
     }
 }
 
-- (BOOL)randomCellState{
+- (BOOL) randomCellState{
     return arc4random_uniform(2) == 1;
 }
 
