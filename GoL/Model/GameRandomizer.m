@@ -28,7 +28,26 @@
 }
 
 - (NSArray *)randomize{
-    return nil;
+    [self addRows];
+
+    return self.gameState;
+}
+
+- (void) addRows{
+    for(int i = 0; i < self.gameDimensions.height; i++){
+        [self addRow:i];
+    }
+}
+
+- (void) addRow:(int)row{
+    self.gameState[row] = [[NSMutableString alloc] initWithCapacity:self.gameDimensions.width];
+    for(int i = 0; i < self.gameDimensions.width; i++){
+        self.gameState[row][i] = [NSNumber numberWithBool:[self randomCellState]];
+    }
+}
+
+- (BOOL)randomCellState{
+    return arc4random_uniform(2) == 1;
 }
 
 @end
