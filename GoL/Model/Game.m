@@ -8,14 +8,23 @@
 
 #import "Cell.h"
 #import "Game.h"
+#import "GameInitializer.h"
 
 @interface Game ()
 
-@property (strong, nonatomic) NSArray *rows;
+@property (strong, nonatomic) NSArray *field;
 
 @end
 
 @implementation Game
+
+- (id) initWithInitialState:(NSArray *)initialState andGameDimensions:(GameDimensions *)gameDimensions {
+    self = [super init];
+    if(self) {
+        self.field = [[[GameInitializer alloc] initWithInitialState:initialState andGameDimensions:gameDimensions] initialize];
+    }
+    return self;
+}
 
 - (void)tick {
     [self eachCell: ^(Cell *cell) {
@@ -27,11 +36,25 @@
 }
 
 - (void)eachCell:(void (^)(Cell *cell))action {
-    for (NSArray *row in self.rows) {
+    for (NSArray *row in self.field) {
         for (Cell *cell in row) {
             action(cell);
         }
     }
+}
+
+- (NSArray *)toStringArray {
+    NSMutableArray *result = [[NSMutableArray alloc] init];
+    for (NSArray *row in self.field) {
+        NSString *rowString = @"";
+
+        for (Cell *cell in row) {
+            rowString = [rowString stringByAppendingString:[cell toString]];
+        }
+
+        [result addObject:rowString];
+    }
+    return result;
 }
 
 @end

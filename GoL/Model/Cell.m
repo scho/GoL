@@ -23,6 +23,10 @@
     return [self.state isAlive];
 }
 
+- (NSString *)toString {
+    return self.isAlive ? @"o" : @"_";
+}
+
 - (void)addNeighborCell:(Cell *)cell {
     [self.neighborhood addCell:cell];
 }

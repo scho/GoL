@@ -14,6 +14,7 @@
 - (void)addNeighborCell:(Cell *)cell;
 - (void)storeNextState;
 - (void)applyNextState;
+- (NSString *)toString;
 
 + (Cell *)createAlive;
 + (Cell *)createDead;

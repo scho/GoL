@@ -37,6 +37,7 @@
 }
 
 - (NSArray *)initialize {
+    [self setUpGame];
     return self.field;
 }
 

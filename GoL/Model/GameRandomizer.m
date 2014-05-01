@@ -40,7 +40,7 @@
 }
 
 - (void)addRow:(int)row {
-    self.gameState[row] = [[NSMutableString alloc] initWithCapacity:self.gameDimensions.width];
+    self.gameState[row] = [[NSMutableArray alloc] initWithCapacity:self.gameDimensions.width];
     for (int i = 0; i < self.gameDimensions.width; i++) {
         self.gameState[row][i] = [NSNumber numberWithBool:[self randomCellState]];
     }

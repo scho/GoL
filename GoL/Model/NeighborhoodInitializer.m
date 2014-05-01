@@ -39,13 +39,14 @@
 }
 
 - (void)setNeighborhoodForCurrentRow {
-    if ([self.field count] <= 1) {
+    NSMutableArray *currentRow = [self.field lastObject];
+    NSInteger count = [currentRow count];
+
+    if(count == 1) {
         return;
     }
 
-    NSMutableArray *currentRow = [self.field lastObject];
-
-    [self setNeighborhoodForRow:currentRow andIndex:[currentRow count] - 2];
+    [self setNeighborhoodForRow:currentRow andIndex:count - 2];
 
     if ([currentRow count] == self.gameDimensions.width) {
         [self setNeighborhoodForRow:currentRow andIndex:0];
@@ -57,7 +58,7 @@
         return;
     }
 
-    NSMutableArray *previousRow = [self.field objectAtIndex:[self.field count] - 1];
+    NSMutableArray *previousRow = [self.field objectAtIndex:[self.field count] - 2];
     NSInteger currentIndex = [[self.field lastObject] count] - 1;
 
 
@@ -75,6 +76,12 @@
 }
 
 - (void)setNeighborhoodForRow:(NSArray *)row andIndex:(NSInteger)index {
+    if(index < 0) {
+        index += [row count];
+    } else if(index >= [row count]) {
+        index -= [row count];
+    }
+
     if ([row count] > index && index >= 0) {
         [self setNeighborhood:[row objectAtIndex:index]];
     }

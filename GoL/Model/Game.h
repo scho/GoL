@@ -7,9 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GameDimensions.h"
 
 @interface Game : NSObject
 
+- (id)initWithInitialState:(NSArray *)initialState andGameDimensions:(GameDimensions *)gameDimensions;
+
 - (void)tick;
+- (NSArray *)toStringArray;
 
 @end
