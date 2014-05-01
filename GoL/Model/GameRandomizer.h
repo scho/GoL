@@ -11,7 +11,7 @@
 
 @interface GameRandomizer : NSObject
 
-- (id) initWithGameDimensions:(GameDimensions *)gameDimensions;
+- (id)initWithGameDimensions:(GameDimensions *)gameDimensions;
 
 - (NSArray *)randomize;
 

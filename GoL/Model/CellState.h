@@ -10,11 +10,11 @@
 
 @interface CellState : NSObject
 
-- (BOOL) isAlive;
-- (void) applyNextState;
-- (void) storeNextState:(BOOL)value;
+- (BOOL)isAlive;
+- (void)applyNextState;
+- (void)storeNextState:(BOOL)value;
 
-+ (CellState *) createAlive;
-+ (CellState *) createDead;
++ (CellState *)createAlive;
++ (CellState *)createDead;
 
 @end

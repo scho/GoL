@@ -11,7 +11,7 @@
 
 @interface GameInitializer : NSObject
 
-- (id) initWithInitialState:(NSArray *)initialState andGameDimensions:(GameDimensions *) gameDimensions;
+- (id)initWithInitialState:(NSArray *)initialState andGameDimensions:(GameDimensions *)gameDimensions;
 
 - (NSArray *)initialize;
 

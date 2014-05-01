@@ -8,7 +8,7 @@
 
 #import "CellState.h"
 
-@interface CellState()
+@interface CellState ()
 
 @property (nonatomic) BOOL currentState;
 
@@ -19,27 +19,27 @@
 
 @implementation CellState
 
-- (BOOL) isAlive{
+- (BOOL)isAlive {
     return _currentState;
 }
 
-- (void) applyNextState{
+- (void)applyNextState {
     _currentState = _nextState;
 }
 
-- (void) storeNextState:(BOOL)value {
+- (void)storeNextState:(BOOL)value {
     _nextState = value;
 }
 
-+ (CellState *) createAlive{
++ (CellState *)createAlive {
     return [[self alloc] initWithCurrentState:true];
 }
 
-+ (CellState *) createDead{
++ (CellState *)createDead {
     return [[self alloc] initWithCurrentState:false];
 }
 
-- (CellState *) initWithCurrentState:(BOOL)currentState{
+- (CellState *)initWithCurrentState:(BOOL)currentState {
     self = [super init];
     if (self) {
         self.currentState = currentState;

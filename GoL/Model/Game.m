@@ -9,7 +9,7 @@
 #import "Game.h"
 #import "Cell.h"
 
-@interface Game()
+@interface Game ()
 
 @property (strong, nonatomic) NSArray *rows;
 
@@ -17,18 +17,18 @@
 
 @implementation Game
 
-- (void) tick{
-    [self eachCell:^(Cell *cell){
-        [cell storeNextState];
-    }];
-    [self eachCell:^(Cell *cell){
-        [cell applyNextState];
-    }];
+- (void)tick {
+    [self eachCell: ^(Cell *cell) {
+         [cell storeNextState];
+     }];
+    [self eachCell: ^(Cell *cell) {
+         [cell applyNextState];
+     }];
 }
 
-- (void) eachCell:(void (^)(Cell *cell))action{
-    for(NSArray *row in self.rows){
-        for(Cell *cell in row){
+- (void)eachCell:(void (^)(Cell *cell))action {
+    for (NSArray *row in self.rows) {
+        for (Cell *cell in row) {
             action(cell);
         }
     }

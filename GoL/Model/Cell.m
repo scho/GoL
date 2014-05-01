@@ -10,7 +10,7 @@
 #import "CellState.h"
 #import "CellNeighborhood.h"
 
-@interface Cell()
+@interface Cell ()
 
 @property (strong, nonatomic) CellState *state;
 @property (strong, nonatomic) CellNeighborhood *neighborhood;
@@ -19,25 +19,25 @@
 
 @implementation Cell
 
-- (BOOL) isAlive {
+- (BOOL)isAlive {
     return [self.state isAlive];
 }
 
-- (void) addNeighborCell:(Cell *)cell{
+- (void)addNeighborCell:(Cell *)cell {
     [self.neighborhood addCell:cell];
 }
 
-- (void) storeNextState{
+- (void)storeNextState {
     BOOL currentState = self.state.isAlive;
     BOOL nextState = [self.neighborhood getNextState:currentState];
     [self.state storeNextState:nextState];
 }
 
-- (void) applyNextState{
+- (void)applyNextState {
     [self.state applyNextState];
 }
 
-- (Cell *) initWithCellState:(id)cellState{
+- (Cell *)initWithCellState:(id)cellState {
     self = [self init];
     if (self) {
         self.state = cellState;
@@ -45,19 +45,19 @@
     return self;
 }
 
-- (id) init{
+- (id)init {
     self = [super init];
-    if(self){
+    if (self) {
         self.neighborhood = [[CellNeighborhood alloc] init];
     }
     return self;
 }
 
-+ (Cell *) createAlive{
++ (Cell *)createAlive {
     return [[self alloc] initWithCellState:[CellState createAlive]];
 }
 
-+ (Cell *) createDead{
++ (Cell *)createDead {
     return [[self alloc] initWithCellState:[CellState createDead]];
 }
 

@@ -12,8 +12,8 @@
 
 @interface NeighborhoodInitializer : NSObject
 
-- (void) initializeCell:(Cell *)cell;
+- (void)initializeCell:(Cell *)cell;
 
-- (id) initWithField:(NSMutableArray *)field andGameDimensions:(GameDimensions *)gameDimensions;
+- (id)initWithField:(NSMutableArray *)field andGameDimensions:(GameDimensions *)gameDimensions;
 
 @end

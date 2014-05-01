@@ -10,14 +10,14 @@
 
 @implementation GameDimensions
 
-- (id) initWithHeight:(NSInteger)height andWidth:(NSInteger)width{
+- (id)initWithHeight:(NSInteger)height andWidth:(NSInteger)width {
     self = [super init];
-    
-    if(self){
+
+    if (self) {
         self.height = height;
         self.width = width;
     }
-    
+
     return self;
 }
 

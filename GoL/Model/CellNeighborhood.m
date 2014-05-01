@@ -9,7 +9,7 @@
 #import "CellNeighborhood.h"
 
 
-@interface CellNeighborhood()
+@interface CellNeighborhood ()
 
 @property (strong, nonatomic) NSMutableArray *cells;
 
@@ -17,38 +17,38 @@
 
 @implementation CellNeighborhood
 
-- (void) addCell:(Cell *)cell{
+- (void)addCell:(Cell *)cell {
     [self.cells addObject:cell];
 }
 
-- (BOOL) getNextState:(BOOL)currentState{
-    if(self.stateCanChange){
+- (BOOL)getNextState:(BOOL)currentState {
+    if (self.stateCanChange) {
         return self.countAlive == 3;
     }
     return currentState;
 }
 
-- (id) init{
+- (id)init {
     self = [super init];
-    if(self){
+    if (self) {
         self.cells = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
-- (BOOL) stateCanChange{
+- (BOOL)stateCanChange {
     return self.countAlive != 2;
 }
 
-- (NSInteger) countAlive{
+- (NSInteger)countAlive {
     NSInteger count = 0;
-    
+
     for (Cell *cell in self.cells) {
-        if(cell.isAlive){
+        if (cell.isAlive) {
             count++;
         }
     }
-    
+
     return count;
 }
 

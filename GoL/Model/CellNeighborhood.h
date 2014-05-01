@@ -11,8 +11,8 @@
 
 @interface CellNeighborhood : NSObject
 
-- (void) addCell:(Cell *) cell;
+- (void)addCell:(Cell *)cell;
 
-- (BOOL) getNextState:(BOOL) currentState;
+- (BOOL)getNextState:(BOOL)currentState;
 
 @end

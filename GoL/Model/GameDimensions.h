@@ -13,6 +13,6 @@
 @property (nonatomic) NSInteger width;
 @property (nonatomic) NSInteger height;
 
-- (id) initWithHeight:(NSInteger)height andWidth:(NSInteger)width;
+- (id)initWithHeight:(NSInteger)height andWidth:(NSInteger)width;
 
 @end
