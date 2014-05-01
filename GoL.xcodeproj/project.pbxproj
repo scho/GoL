@@ -30,6 +30,7 @@
 		49EE6C95190ED476005A76CB /* GameInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EE6C94190ED476005A76CB /* GameInitializer.m */; };
 		49EE6C98190EEA1B005A76CB /* NeighborhoodInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EE6C97190EEA1B005A76CB /* NeighborhoodInitializer.m */; };
 		49F2BA8E1912735400177C17 /* uncrustify.cfg in Resources */ = {isa = PBXBuildFile; fileRef = 49F2BA8D1912735400177C17 /* uncrustify.cfg */; };
+		49F2BA90191273D800177C17 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 49F2BA8F191273D800177C17 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		49EE6C96190EEA1B005A76CB /* NeighborhoodInitializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NeighborhoodInitializer.h; path = Model/NeighborhoodInitializer.h; sourceTree = "<group>"; };
 		49EE6C97190EEA1B005A76CB /* NeighborhoodInitializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NeighborhoodInitializer.m; path = Model/NeighborhoodInitializer.m; sourceTree = "<group>"; };
 		49F2BA8D1912735400177C17 /* uncrustify.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = uncrustify.cfg; sourceTree = "<group>"; };
+		49F2BA8F191273D800177C17 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 		23BA1B56190D19D600C35B2F = {
 			isa = PBXGroup;
 			children = (
+				49F2BA8F191273D800177C17 /* README.md */,
 				49F2BA8D1912735400177C17 /* uncrustify.cfg */,
 				23BA1B68190D19D600C35B2F /* GoL */,
 				23BA1B87190D19D600C35B2F /* GoLTests */,
@@ -288,6 +291,7 @@
 			files = (
 				49F2BA8E1912735400177C17 /* uncrustify.cfg in Resources */,
 				23BA1B7B190D19D600C35B2F /* Images.xcassets in Resources */,
+				49F2BA90191273D800177C17 /* README.md in Resources */,
 				23BA1B6D190D19D600C35B2F /* InfoPlist.strings in Resources */,
 				23BA1B76190D19D600C35B2F /* Main.storyboard in Resources */,
 			);
