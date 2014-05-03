@@ -22,6 +22,7 @@
 		23BA1B8C190D19D600C35B2F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23BA1B8A190D19D600C35B2F /* InfoPlist.strings */; };
 		498341221910488B00FB8824 /* GameDimensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 498341211910488B00FB8824 /* GameDimensions.m */; };
 		4983412519115F9000FB8824 /* GameRandomizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4983412419115F9000FB8824 /* GameRandomizer.m */; };
+		49AFDCE019150AEA00B3572A /* GameLoop.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AFDCDF19150AEA00B3572A /* GameLoop.m */; };
 		49EE6C87190D4928005A76CB /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EE6C86190D4928005A76CB /* Game.m */; };
 		49EE6C8A190D49D0005A76CB /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EE6C89190D49D0005A76CB /* Cell.m */; };
 		49EE6C8D190D49EF005A76CB /* CellState.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EE6C8C190D49EF005A76CB /* CellState.m */; };
@@ -66,6 +67,8 @@
 		498341211910488B00FB8824 /* GameDimensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameDimensions.m; path = Model/GameDimensions.m; sourceTree = "<group>"; };
 		4983412319115F9000FB8824 /* GameRandomizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameRandomizer.h; path = Model/GameRandomizer.h; sourceTree = "<group>"; };
 		4983412419115F9000FB8824 /* GameRandomizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameRandomizer.m; path = Model/GameRandomizer.m; sourceTree = "<group>"; };
+		49AFDCDE19150AEA00B3572A /* GameLoop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLoop.h; path = Model/GameLoop.h; sourceTree = "<group>"; };
+		49AFDCDF19150AEA00B3572A /* GameLoop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameLoop.m; path = Model/GameLoop.m; sourceTree = "<group>"; };
 		49EE6C85190D4928005A76CB /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = Model/Game.h; sourceTree = "<group>"; };
 		49EE6C86190D4928005A76CB /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Game.m; path = Model/Game.m; sourceTree = "<group>"; };
 		49EE6C88190D49D0005A76CB /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cell.h; path = Model/Cell.h; sourceTree = "<group>"; };
@@ -202,6 +205,8 @@
 				4983412419115F9000FB8824 /* GameRandomizer.m */,
 				49EE6C96190EEA1B005A76CB /* NeighborhoodInitializer.h */,
 				49EE6C97190EEA1B005A76CB /* NeighborhoodInitializer.m */,
+				49AFDCDE19150AEA00B3572A /* GameLoop.h */,
+				49AFDCDF19150AEA00B3572A /* GameLoop.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -313,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49EE6C90190D4F75005A76CB /* CellNeighborhood.m in Sources */,
+				49AFDCE019150AEA00B3572A /* GameLoop.m in Sources */,
 				49EE6C8A190D49D0005A76CB /* Cell.m in Sources */,
 				498341221910488B00FB8824 /* GameDimensions.m in Sources */,
 				49EE6C95190ED476005A76CB /* GameInitializer.m in Sources */,

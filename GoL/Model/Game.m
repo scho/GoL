@@ -28,11 +28,11 @@
 
 - (void)tick {
     [self eachCell: ^(Cell *cell) {
-         [cell storeNextState];
-     }];
+        [cell storeNextState];
+    }];
     [self eachCell: ^(Cell *cell) {
-         [cell applyNextState];
-     }];
+        [cell applyNextState];
+    }];
 }
 
 - (void)eachCell:(void (^)(Cell *cell))action {
