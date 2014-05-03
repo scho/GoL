@@ -9,11 +9,13 @@
 #import "ViewController.h"
 #import "Game.h"
 #import "GameDimensions.h"
+#import "GameLoop.h"
 #import "GameRandomizer.h"
 
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet UITextView *gameResult;
 @property (strong, nonatomic) Game *game;
+@property (strong, nonatomic) GameLoop *gameLoop;
 @end
 
 @implementation ViewController
@@ -33,6 +35,19 @@
 
 - (IBAction)touchStart:(UIButton *)sender
 {
+    self.gameLoop = [[GameLoop alloc] initWithGame:self.game andTimeInterval:1];
+
+    ViewController *controller = self;
+
+    [controller updateGameResult];
+
+    self.gameLoop.tickHook = ^(void){
+        NSLog(@"tick");
+        [controller updateGameResult];
+    };
+}
+
+- (void)updateGameResult {
     NSString *result = @"";
     NSArray *rows = [self.game descriptionArray];
     for(NSString *row in rows) {
@@ -41,9 +56,9 @@
     }
 
     [self.gameResult setText:result];
-
-    [self.game tick];
 }
+
+
 
 - (Game *)createGame {
     GameDimensions *gameDimensions = [[GameDimensions alloc] initWithHeight:15 andWidth:20];
