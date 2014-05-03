@@ -58,7 +58,7 @@
 }
 
 - (void)setUpCell:(BOOL)isAlive andColumn:(NSInteger)index {
-    Cell *cell = isAlive ?[Cell createAlive] :[Cell createDead];
+    Cell *cell = isAlive ? [Cell createAlive] : [Cell createDead];
     [self addCell:cell];
 
     [self.neighborhoodInitializer initializeCell:cell];
