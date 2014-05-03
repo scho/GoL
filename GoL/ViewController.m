@@ -20,37 +20,37 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 
     self.game = [self createGame];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)touchStart:(UIButton *)sender
-{
-    self.gameLoop = [[GameLoop alloc] initWithGame:self.game andTimeInterval:1];
+- (IBAction)touchStart:(UIButton *)sender {
+    self.gameLoop = [[GameLoop alloc] initWithGame:self.game andTimeInterval:0.2];
 
     ViewController *controller = self;
 
     [controller updateGameResult];
 
-    self.gameLoop.tickHook = ^(void){
-        NSLog(@"tick");
-        [controller updateGameResult];
+    self.gameLoop.afterTick = ^(void) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [controller updateGameResult];
+        });
     };
+
+    [self.gameLoop start];
 }
 
 - (void)updateGameResult {
     NSString *result = @"";
     NSArray *rows = [self.game descriptionArray];
-    for(NSString *row in rows) {
+    for (NSString *row in rows) {
         result = [result stringByAppendingString:row];
         result = [result stringByAppendingString:@"\n"];
     }
@@ -58,10 +58,8 @@
     [self.gameResult setText:result];
 }
 
-
-
 - (Game *)createGame {
-    GameDimensions *gameDimensions = [[GameDimensions alloc] initWithHeight:15 andWidth:20];
+    GameDimensions *gameDimensions = [[GameDimensions alloc] initWithHeight:36 andWidth:44];
 
     GameRandomizer *gameRandomizer = [[GameRandomizer alloc] initWithGameDimensions:gameDimensions];
 

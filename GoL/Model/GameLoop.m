@@ -11,37 +11,38 @@
 
 @interface GameLoop ()
 
+@property (nonatomic) float timeInterval;
 @property (strong, nonatomic) Game *game;
-@property (strong, nonatomic) NSTimer *timer;
 
 @end
 
 @implementation GameLoop
 
-- (id)initWithGame:(Game *)game andTimeInterval:(int)timeInterval {
+- (id)initWithGame:(Game *)game andTimeInterval:(float)timeInterval {
     self = [super init];
-    if(self) {
+    if (self) {
         self.game = game;
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:timeInterval target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
+        self.timeInterval = timeInterval;
     }
     return self;
 }
 
-- (void)start
-{
+- (void)start {
+    void (^afterTick)() = self.afterTick;
+    Game *game = self.game;
+    dispatch_queue_t gameLoopQueue = dispatch_queue_create("Game loop", NULL);
+    dispatch_async(gameLoopQueue, ^{
+        while (true) {
+            [game tick];
+            if (afterTick) {
+                afterTick();
+            }
+            [NSThread sleepForTimeInterval:self.timeInterval];
+        }
+    });
 }
 
-- (void)stop
-{
-    [self.timer invalidate];
-}
-
-- (void)timerFired:(NSTimer*)theTimer
-{
-    [self.game tick];
-    if(self.tickHook) {
-        self.tickHook();
-    }
+- (void)stop {
 }
 
 @end
