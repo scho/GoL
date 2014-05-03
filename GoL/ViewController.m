@@ -24,6 +24,7 @@
     [super viewDidLoad];
 
     self.game = [self createGame];
+    self.gameLoop = [[GameLoop alloc] initWithGame:self.game andTimeInterval:0.2];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,11 +33,7 @@
 }
 
 - (IBAction)touchStart:(UIButton *)sender {
-    self.gameLoop = [[GameLoop alloc] initWithGame:self.game andTimeInterval:0.2];
-
     ViewController *controller = self;
-
-    [controller updateGameResult];
 
     self.gameLoop.afterTick = ^(void) {
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -45,6 +42,10 @@
     };
 
     [self.gameLoop start];
+}
+
+- (IBAction)touchStop:(UIButton *)sender {
+    [self.gameLoop stop];
 }
 
 - (void)updateGameResult {
