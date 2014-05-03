@@ -14,6 +14,6 @@
 - (id)initWithInitialState:(NSArray *)initialState andGameDimensions:(GameDimensions *)gameDimensions;
 
 - (void)tick;
-- (NSArray *)toStringArray;
+- (NSArray *)descriptionArray;
 
 @end

@@ -34,7 +34,7 @@
 - (IBAction)touchStart:(UIButton *)sender
 {
     NSString *result = @"";
-    NSArray *rows = [self.game toStringArray];
+    NSArray *rows = [self.game descriptionArray];
     for(NSString *row in rows) {
         result = [result stringByAppendingString:row];
         result = [result stringByAppendingString:@"\n"];

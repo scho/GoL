@@ -23,7 +23,7 @@
     return [self.state isAlive];
 }
 
-- (NSString *)toString {
+- (NSString *)description {
     return self.isAlive ? @"o" : @"_";
 }
 
