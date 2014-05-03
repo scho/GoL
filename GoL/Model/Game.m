@@ -18,7 +18,7 @@
 
 @implementation Game
 
-- (id) initWithInitialState:(NSArray *)initialState andGameDimensions:(GameDimensions *)gameDimensions {
+- (id)initWithInitialState:(NSArray *)initialState andGameDimensions:(GameDimensions *)gameDimensions {
     self = [super init];
     if(self) {
         self.field = [[[GameInitializer alloc] initWithInitialState:initialState andGameDimensions:gameDimensions] initialize];
