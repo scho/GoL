@@ -32,11 +32,11 @@
 }
 
 + (CellState *)createAlive {
-    return [[self alloc] initWithCurrentState:true];
+    return [[self alloc] initWithCurrentState:YES];
 }
 
 + (CellState *)createDead {
-    return [[self alloc] initWithCurrentState:false];
+    return [[self alloc] initWithCurrentState:NO];
 }
 
 - (CellState *)initWithCurrentState:(BOOL)currentState {

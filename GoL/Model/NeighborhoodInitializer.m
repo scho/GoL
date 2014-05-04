@@ -48,7 +48,7 @@
 
     [self setNeighborhoodForRow:currentRow andIndex:count - 2];
 
-    if ([currentRow count] == self.gameDimensions.width) {
+    if (count == self.gameDimensions.width) {
         [self setNeighborhoodForRow:currentRow andIndex:0];
     }
 }
@@ -82,9 +82,7 @@
         index -= [row count];
     }
 
-    if ([row count] > index && index >= 0) {
-        [self setNeighborhood:[row objectAtIndex:index]];
-    }
+    [self setNeighborhood:[row objectAtIndex:index]];
 }
 
 - (void)setNeighborhood:(Cell *)neighborCell {

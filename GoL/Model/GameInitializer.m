@@ -53,11 +53,11 @@
 
     for (int i = 0; i < rowState.count; i++) {
         BOOL isAlive = [[rowState objectAtIndex:i] boolValue];
-        [self setUpCell:isAlive andColumn:i];
+        [self setUpCell:isAlive];
     }
 }
 
-- (void)setUpCell:(BOOL)isAlive andColumn:(NSInteger)index {
+- (void)setUpCell:(BOOL)isAlive {
     Cell *cell = isAlive ? [Cell createAlive] : [Cell createDead];
     [self addCell:cell];
 

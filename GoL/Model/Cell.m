@@ -41,7 +41,7 @@
     [self.state applyNextState];
 }
 
-- (Cell *)initWithCellState:(id)cellState {
+- (id)initWithCellState:(CellState *)cellState {
     self = [self init];
     if (self) {
         self.state = cellState;
