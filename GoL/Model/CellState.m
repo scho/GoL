@@ -20,15 +20,15 @@
 @implementation CellState
 
 - (BOOL)isAlive {
-    return _currentState;
+    return self.currentState;
 }
 
 - (void)applyNextState {
-    _currentState = _nextState;
+    self.currentState = self.nextState;
 }
 
 - (void)storeNextState:(BOOL)value {
-    _nextState = value;
+    self.nextState = value;
 }
 
 + (CellState *)createAlive {
