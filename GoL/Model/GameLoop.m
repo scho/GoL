@@ -34,6 +34,8 @@
         return;
     }
 
+    NSLog(@"Start game loop");
+
     void (^afterTick)() = self.afterTick;
     Game *game = self.game;
     self.keepLooping = YES;
@@ -49,6 +51,7 @@
             [NSThread sleepForTimeInterval:self.timeInterval];
 
             if (!*keepLooping) {
+                NSLog(@"Stop game loop");
                 break;
             }
         }
