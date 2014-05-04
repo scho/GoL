@@ -24,7 +24,7 @@
     [super viewDidLoad];
 
     self.game = [self createGame];
-    self.gameLoop = [[GameLoop alloc] initWithGame:self.game andTimeInterval:0.2];
+    self.gameLoop = [[GameLoop alloc] initWithGame:self.game andTimeInterval:0.1];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,9 +36,7 @@
     ViewController *controller = self;
 
     self.gameLoop.afterTick = ^(void) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [controller updateGameResult];
-        });
+        [controller updateGameResult];
     };
 
     [self.gameLoop start];
@@ -55,8 +53,9 @@
         result = [result stringByAppendingString:row];
         result = [result stringByAppendingString:@"\n"];
     }
-
-    [self.gameResult setText:result];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.gameResult setText:result];
+    });
 }
 
 - (Game *)createGame {
