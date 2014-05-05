@@ -46,14 +46,14 @@
 
 
 - (NSString *)description {
-    NSString *result = [[NSString alloc] init];
+    NSMutableString *result = [[NSMutableString alloc] init];
     for (NSArray *row in self.field) {
 
         for (Cell *cell in row) {
-            result = [result stringByAppendingString:[cell description]];
+            [result appendString:[cell description]];
         }
 
-        result = [result stringByAppendingString:@"\n"];
+        [result appendString:@"\n"];
     }
     return result;
 }
