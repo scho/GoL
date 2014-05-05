@@ -19,6 +19,9 @@
 
 - (void)addCell:(Cell *)cell {
     [self.cells addObject:cell];
+    if(self.cells.count > 8) {
+        NSLog(@"WARNING - Adding more than eight neighbors");
+    }
 }
 
 - (BOOL)getNextState:(BOOL)currentState {

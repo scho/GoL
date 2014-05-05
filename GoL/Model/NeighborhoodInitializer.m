@@ -61,7 +61,6 @@
     NSMutableArray *previousRow = [self.field objectAtIndex:[self.field count] - 2];
     NSInteger currentIndex = [[self.field lastObject] count] - 1;
 
-
     [self setNeighborhoodForRow:previousRow andIndex:currentIndex - 1];
     [self setNeighborhoodForRow:previousRow andIndex:currentIndex];
     [self setNeighborhoodForRow:previousRow andIndex:currentIndex + 1];

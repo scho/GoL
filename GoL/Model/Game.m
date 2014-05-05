@@ -43,16 +43,17 @@
     }
 }
 
-- (NSArray *)descriptionArray {
-    NSMutableArray *result = [[NSMutableArray alloc] init];
+
+
+- (NSString *)description {
+    NSString *result = [[NSString alloc] init];
     for (NSArray *row in self.field) {
-        NSString *rowString = @"";
 
         for (Cell *cell in row) {
-            rowString = [rowString stringByAppendingString:[cell description]];
+            result = [result stringByAppendingString:[cell description]];
         }
 
-        [result addObject:rowString];
+        result = [result stringByAppendingString:@"\n"];
     }
     return result;
 }

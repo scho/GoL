@@ -48,14 +48,7 @@
 
 - (void)updateGameResult {
     dispatch_async(dispatch_get_main_queue(), ^{
-        NSString *result = @"";
-        NSArray *rows = [self.game descriptionArray];
-        for (NSString *row in rows) {
-            result = [result stringByAppendingString:row];
-            result = [result stringByAppendingString:@"\n"];
-        }
-
-        [self.gameResult setText:result];
+        [self.gameResult setText:self.game.description];
     });
 }
 
