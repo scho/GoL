@@ -10,7 +10,6 @@
 #import "Game.h"
 #import "GameDimensions.h"
 #import "GameLoop.h"
-#import "GameRandomizer.h"
 
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet UITextView *gameResult;
@@ -24,7 +23,7 @@
     [super viewDidLoad];
 
     self.game = [self createGame];
-    self.gameLoop = [[GameLoop alloc] initWithGame:self.game andTimeInterval:0.1];
+    self.gameLoop = [[GameLoop alloc] initWithGame:self.game andTimeInterval:0.05];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,6 +41,10 @@
     [self.gameLoop start];
 }
 
+- (IBAction)touchReset:(UIButton *)sender {
+    [self.game buildField];
+}
+
 - (IBAction)touchStop:(UIButton *)sender {
     [self.gameLoop stop];
 }
@@ -53,11 +56,8 @@
 }
 
 - (Game *)createGame {
-    GameDimensions *gameDimensions = [[GameDimensions alloc] initWithHeight:36 andWidth:44];
 
-    GameRandomizer *gameRandomizer = [[GameRandomizer alloc] initWithGameDimensions:gameDimensions];
-
-    Game *game = [[Game alloc] initWithInitialState:[gameRandomizer randomize] andGameDimensions:gameDimensions];
+    Game *game = [[Game alloc] initWithGameDimensions:[[GameDimensions alloc] initWithHeight:36 andWidth:44]];
 
     return game;
 }

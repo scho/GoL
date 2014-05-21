@@ -11,8 +11,10 @@
 
 @interface Game : NSObject
 
-- (id)initWithInitialState:(NSArray *)initialState andGameDimensions:(GameDimensions *)gameDimensions;
+- (id)initWithGameDimensions:(GameDimensions *)gameDimensions;
 
 - (void)tick;
+
+- (void) buildField;
 
 @end
