@@ -17,7 +17,7 @@
 @property (strong, nonatomic) NSArray *field;
 @property (strong, nonatomic) GameDimensions *gameDimensions;
 @property (strong, nonatomic) GameRandomizer *gameRandomizer;
-@property (nonatomic) BOOL isBuildingField;
+@property (nonatomic) BOOL isCreatingField;
 
 @end
 
@@ -37,13 +37,13 @@
 // Das muss man denke ich in verschiedene Threads packen. Spielaufbau -> Spiel -> Spielende -> Spielaufbau...
 
 - (void) createField {
-    self.isBuildingField = YES;
+    self.isCreatingField = YES;
     self.field = [[[GameInitializer alloc] initWithInitialState:[self.gameRandomizer randomize] andGameDimensions:[self gameDimensions]] initialize];
-    self.isBuildingField = NO;
+    self.isCreatingField = NO;
 }
 
 - (void)tick {
-    if (!self.isBuildingField){
+    if (!self.isCreatingField){
         [self eachCell: ^(Cell *cell) {
             [cell storeNextState];
         }];
