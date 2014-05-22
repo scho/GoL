@@ -42,7 +42,7 @@
 }
 
 - (IBAction)touchReset:(UIButton *)sender {
-    [self.game buildField];
+    [self.game createField];
 }
 
 - (IBAction)touchStop:(UIButton *)sender {

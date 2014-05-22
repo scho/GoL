@@ -15,6 +15,6 @@
 
 - (void)tick;
 
-- (void) buildField;
+- (void) createField;
 
 @end

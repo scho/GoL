@@ -28,7 +28,7 @@
     if(self) {
         self.gameDimensions = gameDimensions;
         self.gameRandomizer = [[GameRandomizer alloc] initWithGameDimensions:gameDimensions];
-        [self buildField];
+        [self createField];
     }
     return self;
 }
@@ -36,7 +36,7 @@
 // tick und buildField dürfen nicht gleichzeitig aus geführt werden. Daher kommt isBuildingField.
 // Das muss man denke ich in verschiedene Threads packen. Spielaufbau -> Spiel -> Spielende -> Spielaufbau...
 
-- (void) buildField {
+- (void) createField {
     self.isBuildingField = YES;
     self.field = [[[GameInitializer alloc] initWithInitialState:[self.gameRandomizer randomize] andGameDimensions:[self gameDimensions]] initialize];
     self.isBuildingField = NO;
