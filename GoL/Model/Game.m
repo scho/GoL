@@ -29,7 +29,6 @@
         self.gameDimensions = gameDimensions;
         self.gameRandomizer = [[GameRandomizer alloc] initWithGameDimensions:gameDimensions];
         [self buildField];
-        self.isBuildingField = NO;
     }
     return self;
 }
