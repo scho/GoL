@@ -11,10 +11,9 @@
 
 @interface GameLoop : NSObject
 
-- (id)initWithGame:(Game *)game andTimeInterval:(float)timeInterval;
+- (id)initWithGame:(Game *)game andTimeInterval:(float)timeInterval andAfterTick:(void (^)()) afterTick;
+
 - (void)start;
 - (void)stop;
-
-@property (nonatomic, assign) void (^afterTick)();
 
 @end

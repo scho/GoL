@@ -19,9 +19,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pgk-D6-w7z">
                                 <rect key="frame" x="20" y="459" width="64" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Start"/>
+                                <state key="normal" title="Random"/>
                                 <connections>
-                                    <action selector="touchStart:" destination="vXZ-lx-hvc" eventType="touchDown" id="eTn-pv-YC8"/>
+                                    <action selector="touchRandom:" destination="vXZ-lx-hvc" eventType="touchDown" id="RDR-zb-mPP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfu-Xu-PmW">
@@ -29,15 +29,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Stop"/>
                                 <connections>
-                                    <action selector="touchStop:" destination="vXZ-lx-hvc" eventType="touchDown" id="gaC-8C-67V"/>
+                                    <action selector="touchPauseResume:" destination="vXZ-lx-hvc" eventType="touchDown" id="b1E-Gd-8Nh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7X-ln-ym5">
                                 <rect key="frame" x="128" y="459" width="64" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Reset"/>
+                                <state key="normal" title="Empty"/>
                                 <connections>
-                                    <action selector="touchReset:" destination="vXZ-lx-hvc" eventType="touchDown" id="cgb-on-3jF"/>
+                                    <action selector="touchBlank:" destination="vXZ-lx-hvc" eventType="touchDown" id="lYT-Fs-vLv"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Nothing here yet.." translatesAutoresizingMaskIntoConstraints="NO" id="p2a-aK-1PK">
@@ -51,6 +51,7 @@
                     </view>
                     <connections>
                         <outlet property="gameResult" destination="p2a-aK-1PK" id="HHY-XG-wdH"/>
+                        <outlet property="pauseResumeButton" destination="jfu-Xu-PmW" id="Rpp-2a-o8u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

@@ -8,13 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "GameDimensions.h"
+#import "GameStateInitializer.h"
 
 @interface Game : NSObject
 
-- (id)initWithGameDimensions:(GameDimensions *)gameDimensions;
+- (id)initWithGameDimensions:(GameDimensions *)gameDimensions andGameStateInitializer:(GameStateInitializer *)gameStateInitializer;
 
 - (void)tick;
 
-- (void) createField;
+- (void)createField;
 
 @end
