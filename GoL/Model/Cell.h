@@ -14,6 +14,8 @@
 - (void)addNeighborCell:(Cell *)cell;
 - (void)storeNextState;
 - (void)applyNextState;
+- (void)die;
+- (void)becomeAlive;
 
 + (Cell *)createAlive;
 + (Cell *)createDead;

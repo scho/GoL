@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GameDimensions.h"
+#import "Dimensions.h"
 
 @interface GameInitializer : NSObject
 
-- (id)initWithInitialState:(NSArray *)initialState andGameDimensions:(GameDimensions *)gameDimensions;
+- (id)initWithInitialState:(NSArray *)initialState andDimensions:(Dimensions *)dimensions;
 
 - (NSArray *)initialize;
 

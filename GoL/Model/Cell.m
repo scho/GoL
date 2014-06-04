@@ -49,6 +49,14 @@
     return self;
 }
 
+- (void)die {
+    [self.state die];
+}
+
+-(void)becomeAlive {
+    [self.state becomeAlive];
+}
+
 - (id)init {
     self = [super init];
     if (self) {

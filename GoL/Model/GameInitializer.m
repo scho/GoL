@@ -7,7 +7,7 @@
 //
 
 #import "Cell.h"
-#import "GameDimensions.h"
+#import "Dimensions.h"
 #import "GameInitializer.h"
 #import "NeighborhoodInitializer.h"
 
@@ -17,21 +17,21 @@
 @property (strong, nonatomic) NSMutableArray *field;
 @property (strong, nonatomic) NeighborhoodInitializer *neighborhoodInitializer;
 
-@property (strong, nonatomic) GameDimensions *gameDimensions;
+@property (strong, nonatomic) Dimensions *dimensions;
 
 @end
 
 
 @implementation GameInitializer
 
-- (id)initWithInitialState:(NSArray *)initialState andGameDimensions:(GameDimensions *)gameDimensions {
+- (id)initWithInitialState:(NSArray *)initialState andDimensions:(Dimensions *)dimensions {
     self = [super init];
     if (self) {
         self.initialState = initialState;
-        self.gameDimensions = gameDimensions;
-        self.field = [[NSMutableArray alloc] initWithCapacity:self.gameDimensions.height];
+        self.dimensions = dimensions;
+        self.field = [[NSMutableArray alloc] initWithCapacity:self.dimensions.height];
 
-        self.neighborhoodInitializer = [[NeighborhoodInitializer alloc] initWithField:self.field andGameDimensions:self.gameDimensions];
+        self.neighborhoodInitializer = [[NeighborhoodInitializer alloc] initWithField:self.field andDimensions:self.dimensions];
     }
     return self;
 }
@@ -48,7 +48,7 @@
 }
 
 - (void)setUpRow:(NSArray *)rowState {
-    NSMutableArray *row = [[NSMutableArray alloc] initWithCapacity:self.gameDimensions.width];
+    NSMutableArray *row = [[NSMutableArray alloc] initWithCapacity:self.dimensions.width];
     [self.field addObject:row];
 
     for (int i = 0; i < rowState.count; i++) {

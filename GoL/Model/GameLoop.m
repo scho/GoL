@@ -14,8 +14,10 @@
 @property (nonatomic) float timeInterval;
 @property (strong, nonatomic) Game *game;
 @property (nonatomic) BOOL keepLooping;
-@property (nonatomic, assign) void (^afterTick)();
+@property (nonatomic) BOOL killLoop;
 
+@property (nonatomic, assign) void (^afterKill)();
+@property (strong, nonatomic) dispatch_queue_t gameLoopQueue;
 @end
 
 @implementation GameLoop
@@ -26,7 +28,10 @@
         self.game = game;
         self.timeInterval = timeInterval;
         self.keepLooping = NO;
+        self.killLoop = NO;
         self.afterTick = afterTick;
+        self.afterKill = nil;
+        self.gameLoopQueue = dispatch_queue_create("Game loop", NULL);
 
         [self dispatchAsyncLoop];
     }
@@ -36,19 +41,28 @@
 - (void)dispatchAsyncLoop {
     void (^afterTick)() = self.afterTick;
     Game *game = self.game;
+    GameLoop *gameLoop = self;
     self.keepLooping = YES;
     BOOL *keepLooping = &_keepLooping;
+    BOOL *killLoop = &_killLoop;
 
-    dispatch_queue_t gameLoopQueue = dispatch_queue_create("Game loop", NULL);
-    dispatch_async(gameLoopQueue, ^{
+    dispatch_async(self.gameLoopQueue, ^{
         while (true) {
-            if (*keepLooping) {
+            if (*keepLooping && !*killLoop) {
                 [game tick];
                 if (afterTick) {
                     afterTick();
                 }
-                [NSThread sleepForTimeInterval:self.timeInterval];
             }
+            if(*killLoop) {
+                NSLog(@"Kill game loop");
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    gameLoop.afterKill();
+                });
+
+                break;
+            }
+            [NSThread sleepForTimeInterval:self.timeInterval];
         }
     });
 }
@@ -61,6 +75,16 @@
 - (void)stop {
     self.keepLooping = NO;
     NSLog(@"Stop game loop");
+}
+
+- (void)killWithCallback:(void (^)()) afterKill {
+    self.afterKill = afterKill;
+    [self stop];
+    self.killLoop = YES;
+}
+
+- (void)callAfterKill {
+    self.afterKill();
 }
 
 @end

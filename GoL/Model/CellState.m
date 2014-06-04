@@ -31,6 +31,16 @@
     self.nextState = value;
 }
 
+-(void)die {
+    self.currentState = NO;
+    NSLog(@"die");
+}
+
+-(void)becomeAlive {
+    self.currentState = YES;
+    NSLog(@"becomeAlive");
+}
+
 + (CellState *)createAlive {
     return [[self alloc] initWithCurrentState:YES];
 }

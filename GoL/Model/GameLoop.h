@@ -15,5 +15,8 @@
 
 - (void)start;
 - (void)stop;
+- (void)killWithCallback:(void (^)()) afterKill;
+
+@property (nonatomic, assign) void (^afterTick)();
 
 @end

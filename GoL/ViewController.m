@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "Game.h"
-#import "GameDimensions.h"
+#import "Dimensions.h"
 #import "GameLoop.h"
 #import "GameStateInitializerStrategy.h"
 #import "RandomStrategy.h"
@@ -19,12 +19,15 @@
 @property (strong, nonatomic) IBOutlet UIButton *pauseResumeButton;
 @property (strong, nonatomic) Game *game;
 @property (strong, nonatomic) GameLoop *gameLoop;
+@property (nonatomic) BOOL doUpdateGameResult;
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.doUpdateGameResult = YES;
     [self.pauseResumeButton setEnabled:NO];
 }
 
@@ -36,6 +39,14 @@
 - (IBAction)touchRandom:(UIButton *)sender {
     [self createRandomGame];
     [self start];
+}
+
+- (IBAction)touchCross:(UIButton *)sender {
+    [self.game addFigure:[Figure createCross]];
+}
+
+- (IBAction)touchShip:(id)sender {
+    [self.game addFigure:[Figure createLightweightSpaceship]];
 }
 
 - (IBAction)touchBlank:(UIButton *)sender {
@@ -67,12 +78,26 @@
 - (void)start {
     ViewController *controller = self;
 
-    self.gameLoop = [[GameLoop alloc] initWithGame:self.game andTimeInterval:0.1 andAfterTick: ^(void) {
-        [controller updateGameResult];
-    }];
+    if (self.gameLoop) {
+        self.gameLoop.afterTick = nil;
+        NSLog(@"Kill from Controller");
+        [self.gameLoop killWithCallback: ^(void) {
+            self.gameLoop = [[GameLoop alloc] initWithGame:self.game andTimeInterval:0.1 andAfterTick: ^(void) {
+                [controller updateGameResult];
+            }];
 
-    [self.pauseResumeButton setEnabled:YES];
-    [self resume];
+            [self.pauseResumeButton setEnabled:YES];
+            [self resume];
+        }];
+    }
+    else {
+        self.gameLoop = [[GameLoop alloc] initWithGame:self.game andTimeInterval:0.1 andAfterTick: ^(void) {
+            [controller updateGameResult];
+        }];
+
+        [self.pauseResumeButton setEnabled:YES];
+        [self resume];
+    }
 }
 
 - (void)updateGameResult {
@@ -94,11 +119,11 @@
 }
 
 - (Game *)createGame:(id <GameStateInitializerStrategy> )gameStateInitializerStrategy {
-    GameDimensions *gameDimensions = [[GameDimensions alloc] initWithHeight:36 andWidth:44];
+    Dimensions *dimensions = [[Dimensions alloc] initWithHeight:30 andWidth:44];
 
-    GameStateInitializer *gameStateInitializer = [[GameStateInitializer alloc] initWithGameDimensions:gameDimensions andGameStateInitializerStrategy:gameStateInitializerStrategy];
+    GameStateInitializer *gameStateInitializer = [[GameStateInitializer alloc] initWithDimensions:dimensions andGameStateInitializerStrategy:gameStateInitializerStrategy];
 
-    Game *game = [[Game alloc] initWithGameDimensions:gameDimensions andGameStateInitializer:gameStateInitializer];
+    Game *game = [[Game alloc] initWithDimensions:dimensions andGameStateInitializer:gameStateInitializer];
 
     return game;
 }

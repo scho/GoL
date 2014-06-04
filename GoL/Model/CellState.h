@@ -13,6 +13,8 @@
 - (BOOL)isAlive;
 - (void)applyNextState;
 - (void)storeNextState:(BOOL)value;
+- (void)die;
+-(void)becomeAlive;
 
 + (CellState *)createAlive;
 + (CellState *)createDead;

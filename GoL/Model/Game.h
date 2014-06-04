@@ -7,15 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GameDimensions.h"
+#import "Dimensions.h"
+#import "Figure.h"
 #import "GameStateInitializer.h"
 
 @interface Game : NSObject
 
-- (id)initWithGameDimensions:(GameDimensions *)gameDimensions andGameStateInitializer:(GameStateInitializer *)gameStateInitializer;
+- (id)initWithDimensions:(Dimensions *)dimensions andGameStateInitializer:(GameStateInitializer *)gameStateInitializer;
 
 - (void)tick;
 
 - (void)createField;
+
+- (void)addFigure:(Figure *)figure;
 
 @end

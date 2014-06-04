@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "Cell.h"
-#import "GameDimensions.h"
+#import "Dimensions.h"
 
 @interface NeighborhoodInitializer : NSObject
 
 - (void)initializeCell:(Cell *)cell;
 
-- (id)initWithField:(NSMutableArray *)field andGameDimensions:(GameDimensions *)gameDimensions;
+- (id)initWithField:(NSMutableArray *)field andDimensions:(Dimensions *)dimensions;
 
 @end

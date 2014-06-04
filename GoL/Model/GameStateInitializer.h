@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GameDimensions.h"
+#import "Dimensions.h"
 #import "GameStateInitializerStrategy.h"
 
 @interface GameStateInitializer : NSObject
 
-- (id)initWithGameDimensions:(GameDimensions *)gameDimensions andGameStateInitializerStrategy:(id <GameStateInitializerStrategy> )gameStateInitializerStrategy;
+- (id)initWithDimensions:(Dimensions *)dimensions andGameStateInitializerStrategy:(id <GameStateInitializerStrategy> )gameStateInitializerStrategy;
 
 - (NSArray *)generateGameState;
 

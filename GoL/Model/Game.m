@@ -9,15 +9,14 @@
 #import "Cell.h"
 #import "Game.h"
 #import "GameInitializer.h"
-#import "GameDimensions.h"
+#import "Dimensions.h"
+
 #import "GameStateInitializer.h"
 
 @interface Game ()
 
 @property (strong, nonatomic) NSArray *field;
-@property (strong, nonatomic) GameDimensions *gameDimensions;
-
-@property (nonatomic) BOOL isCreatingField;
+@property (strong, nonatomic) Dimensions *dimensions;
 
 @property (strong, nonatomic) GameStateInitializer *gameStateInitializer;
 
@@ -25,37 +24,44 @@
 
 @implementation Game
 
-- (id)initWithGameDimensions:(GameDimensions *)gameDimensions andGameStateInitializer:(GameStateInitializer *)gameStateInitializer {
+- (id)initWithDimensions:(Dimensions *)dimensions andGameStateInitializer:(GameStateInitializer *)gameStateInitializer {
     self = [super init];
     if (self) {
-        self.gameDimensions = gameDimensions;
-        [self createField];
-
+        self.dimensions = dimensions;
         self.gameStateInitializer = gameStateInitializer;
         [self createField];
-
-        self.isCreatingField = NO;
     }
     return self;
 }
 
-// tick und buildField dürfen nicht gleichzeitig aus geführt werden. Daher kommt isBuildingField.
-// Das muss man denke ich in verschiedene Threads packen. Spielaufbau -> Spiel -> Spielende -> Spielaufbau...
-
 - (void)createField {
-    self.isCreatingField = YES;
-    self.field = [[[GameInitializer alloc] initWithInitialState:[self.gameStateInitializer generateGameState] andGameDimensions:[self gameDimensions]] initialize];
-    self.isCreatingField = NO;
+    self.field = [[[GameInitializer alloc] initWithInitialState:[self.gameStateInitializer generateGameState] andDimensions:[self dimensions]] initialize];
 }
 
 - (void)tick {
-    if (!self.isCreatingField) {
-        [self eachCell: ^(Cell *cell) {
-            [cell storeNextState];
-        }];
-        [self eachCell: ^(Cell *cell) {
-            [cell applyNextState];
-        }];
+    [self eachCell: ^(Cell *cell) {
+        [cell storeNextState];
+    }];
+    [self eachCell: ^(Cell *cell) {
+        [cell applyNextState];
+    }];
+}
+
+- (void)addFigure:(Figure *)figure {
+    int y = 10;
+    for(int i = 0; i < figure.dimensions.height; i++) {
+        int x = 10;
+        for(int j = 0; j < figure.dimensions.width; j++) {
+            Cell *cell = [[self.field objectAtIndex:y] objectAtIndex:x];
+            NSLog(@"cell");
+            if([[[figure.field objectAtIndex:i] objectAtIndex:j] boolValue]) {
+                [cell becomeAlive];
+            } else{
+                [cell die];
+            }
+            x++;
+        }
+        y++;
     }
 }
 
