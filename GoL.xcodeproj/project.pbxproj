@@ -74,6 +74,7 @@
 		49260144193F587900FB75E7 /* CellState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellState.swift; path = Model/CellState.swift; sourceTree = "<group>"; };
 		49260146193FA27600FB75E7 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cell.swift; path = Model/Cell.swift; sourceTree = "<group>"; };
 		49260148193FA4ED00FB75E7 /* CellNeighborhood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellNeighborhood.swift; path = Model/CellNeighborhood.swift; sourceTree = "<group>"; };
+		4926014A193FAD8400FB75E7 /* GoL-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GoL-Bridging-Header.h"; sourceTree = "<group>"; };
 		498341201910488B00FB8824 /* Dimensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Dimensions.h; path = Model/Dimensions.h; sourceTree = "<group>"; };
 		498341211910488B00FB8824 /* Dimensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Dimensions.m; path = Model/Dimensions.m; sourceTree = "<group>"; };
 		4983412319115F9000FB8824 /* GameStateInitializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameStateInitializer.h; path = Model/GameStateInitializer.h; sourceTree = "<group>"; };
@@ -247,6 +248,7 @@
 				49D759F2193E0EFD009890AC /* Figure.swift */,
 				49CB3889193BC59900625AC4 /* Figure.h */,
 				49CB388A193BC59900625AC4 /* Figure.m */,
+				4926014A193FAD8400FB75E7 /* GoL-Bridging-Header.h */,
 			);
 			name = Model;
 			sourceTree = "<group>";
