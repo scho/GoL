@@ -1,5 +1,5 @@
 //
-//  GameDimensions.h
+//  Dimensions.h
 //  GoL
 //
 //  Created by Georg Meyer on 29.04.14.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface GameDimensions : NSObject
+@interface Dimensions : NSObject
 
 @property (nonatomic) NSInteger width;
 @property (nonatomic) NSInteger height;

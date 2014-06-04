@@ -1,14 +1,14 @@
 //
-//  GameDimensions.m
+//  Dimensions.m
 //  GoL
 //
 //  Created by Georg Meyer on 29.04.14.
 //
 //
 
-#import "GameDimensions.h"
+#import "Dimensions.h"
 
-@implementation GameDimensions
+@implementation Dimensions
 
 - (id)initWithHeight:(NSInteger)height andWidth:(NSInteger)width {
     self = [super init];
