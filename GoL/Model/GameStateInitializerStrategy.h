@@ -1,5 +1,5 @@
 //
-//  GameStateInitializerStrategy.h
+//  GameStateInitiliazerStrategy.h
 //  GoL
 //
 //  Created by Georg Meyer on 01.06.14.
