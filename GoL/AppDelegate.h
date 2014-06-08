@@ -2,7 +2,7 @@
 //  AppDelegate.h
 //  GoL
 //
-//  Created by chico on 27.04.14.
+//  Created by Marcel Meyer on 27.04.14.
 //
 //
 
