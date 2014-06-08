@@ -19,7 +19,6 @@
 @property (strong, nonatomic) IBOutlet UIButton *pauseResumeButton;
 @property (strong, nonatomic) Game *game;
 @property (strong, nonatomic) GameLoop *gameLoop;
-@property (nonatomic) BOOL doUpdateGameResult;
 
 @end
 
@@ -27,7 +26,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.doUpdateGameResult = YES;
     [self.pauseResumeButton setEnabled:NO];
 }
 

@@ -2,7 +2,7 @@
 //  GameStateInitiliazerStrategy.swift
 //  GoL
 //
-//  Created by chico on 04.06.14.
+//  Created by Marcel Meyer on 04.06.14.
 //
 //
 
@@ -10,6 +10,6 @@ import Foundation
 
 protocol GameStateInitializerStrategy {
     
-    func getState() -> Bool;
+    func getState() -> Bool
     
 }

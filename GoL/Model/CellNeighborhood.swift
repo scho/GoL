@@ -10,40 +10,40 @@ import Foundation
 
 class CellNeighborhood {
     
-    var _cells : Cell[];
+    var cells : Cell[]
     
     init(){
-        _cells = Cell[]();
+        cells = Cell[]()
     }
     
     func addCell(cell: Cell){
-        _cells.append(cell);
-        if(_cells.count > 8){
-            println("WARNING - Adding more than eight neighbors");
+        cells.append(cell)
+        if(cells.count > 8){
+            println("WARNING - Adding more than eight neighbors")
         }
     }
     
     func getNextState(currentState : Bool) -> Bool{
         if(stateCanChange()){
-            return countAlive() == 3;
+            return countAlive() == 3
         }
-        return currentState;
+        return currentState
     }
     
     func stateCanChange() -> Bool {
-        return countAlive() != 2;
+        return countAlive() != 2
     }
     
     func countAlive() -> Int {
-        var count = 0;
+        var count = 0
         
-        for cell in _cells {
+        for cell in cells {
             if(cell.isAlive()){
-                count++;
+                count++
             }
         }
         
-        return count;
+        return count
     }
     
 }

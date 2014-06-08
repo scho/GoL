@@ -26,6 +26,12 @@
 		49260145193F587900FB75E7 /* CellState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49260144193F587900FB75E7 /* CellState.swift */; };
 		49260147193FA27600FB75E7 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49260146193FA27600FB75E7 /* Cell.swift */; };
 		49260149193FA4ED00FB75E7 /* CellNeighborhood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49260148193FA4ED00FB75E7 /* CellNeighborhood.swift */; };
+		4926014C1944734F00FB75E7 /* NeighborhoodInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4926014B1944734F00FB75E7 /* NeighborhoodInitializer.swift */; };
+		4926014E19447E3A00FB75E7 /* GameStateInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4926014D19447E3A00FB75E7 /* GameStateInitializer.swift */; };
+		4926015019447FD200FB75E7 /* GameInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4926014F19447FD200FB75E7 /* GameInitializer.swift */; };
+		492601521944A0FD00FB75E7 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492601511944A0FD00FB75E7 /* Game.swift */; };
+		492601541944A46400FB75E7 /* GameLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492601531944A46400FB75E7 /* GameLoop.swift */; };
+		492601581944BBA800FB75E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492601571944BBA800FB75E7 /* ViewController.swift */; };
 		498341221910488B00FB8824 /* Dimensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 498341211910488B00FB8824 /* Dimensions.m */; };
 		4983412519115F9000FB8824 /* GameStateInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4983412419115F9000FB8824 /* GameStateInitializer.m */; };
 		49A24F46193B4F1D00DD11B2 /* RandomStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A24F45193B4F1D00DD11B2 /* RandomStrategy.m */; };
@@ -81,6 +87,12 @@
 		49260146193FA27600FB75E7 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cell.swift; path = Model/Cell.swift; sourceTree = "<group>"; };
 		49260148193FA4ED00FB75E7 /* CellNeighborhood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellNeighborhood.swift; path = Model/CellNeighborhood.swift; sourceTree = "<group>"; };
 		4926014A193FAD8400FB75E7 /* GoL-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GoL-Bridging-Header.h"; sourceTree = "<group>"; };
+		4926014B1944734F00FB75E7 /* NeighborhoodInitializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NeighborhoodInitializer.swift; path = Model/NeighborhoodInitializer.swift; sourceTree = "<group>"; };
+		4926014D19447E3A00FB75E7 /* GameStateInitializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameStateInitializer.swift; path = Model/GameStateInitializer.swift; sourceTree = "<group>"; };
+		4926014F19447FD200FB75E7 /* GameInitializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameInitializer.swift; path = Model/GameInitializer.swift; sourceTree = "<group>"; };
+		492601511944A0FD00FB75E7 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Game.swift; path = Model/Game.swift; sourceTree = "<group>"; };
+		492601531944A46400FB75E7 /* GameLoop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameLoop.swift; path = Model/GameLoop.swift; sourceTree = "<group>"; };
+		492601571944BBA800FB75E7 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		498341201910488B00FB8824 /* Dimensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Dimensions.h; path = Model/Dimensions.h; sourceTree = "<group>"; };
 		498341211910488B00FB8824 /* Dimensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Dimensions.m; path = Model/Dimensions.m; sourceTree = "<group>"; };
 		4983412319115F9000FB8824 /* GameStateInitializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameStateInitializer.h; path = Model/GameStateInitializer.h; sourceTree = "<group>"; };
@@ -176,6 +188,7 @@
 				23BA1B71190D19D600C35B2F /* AppDelegate.h */,
 				23BA1B72190D19D600C35B2F /* AppDelegate.m */,
 				23BA1B74190D19D600C35B2F /* Main.storyboard */,
+				492601571944BBA800FB75E7 /* ViewController.swift */,
 				23BA1B77190D19D600C35B2F /* ViewController.h */,
 				23BA1B78190D19D600C35B2F /* ViewController.m */,
 				23BA1B7A190D19D600C35B2F /* Images.xcassets */,
@@ -241,17 +254,22 @@
 				49260144193F587900FB75E7 /* CellState.swift */,
 				49EE6C8B190D49EF005A76CB /* CellState.h */,
 				49EE6C8C190D49EF005A76CB /* CellState.m */,
+				492601511944A0FD00FB75E7 /* Game.swift */,
 				49EE6C85190D4928005A76CB /* Game.h */,
 				49EE6C86190D4928005A76CB /* Game.m */,
 				49D759EF193E09C9009890AC /* Dimensions.swift */,
 				498341201910488B00FB8824 /* Dimensions.h */,
 				498341211910488B00FB8824 /* Dimensions.m */,
+				4926014F19447FD200FB75E7 /* GameInitializer.swift */,
 				49EE6C93190ED476005A76CB /* GameInitializer.h */,
 				49EE6C94190ED476005A76CB /* GameInitializer.m */,
+				4926014D19447E3A00FB75E7 /* GameStateInitializer.swift */,
 				4983412319115F9000FB8824 /* GameStateInitializer.h */,
 				4983412419115F9000FB8824 /* GameStateInitializer.m */,
+				4926014B1944734F00FB75E7 /* NeighborhoodInitializer.swift */,
 				49EE6C96190EEA1B005A76CB /* NeighborhoodInitializer.h */,
 				49EE6C97190EEA1B005A76CB /* NeighborhoodInitializer.m */,
+				492601531944A46400FB75E7 /* GameLoop.swift */,
 				49AFDCDE19150AEA00B3572A /* GameLoop.h */,
 				49AFDCDF19150AEA00B3572A /* GameLoop.m */,
 				49D759F2193E0EFD009890AC /* Figure.swift */,
@@ -378,6 +396,9 @@
 				23FAD81A193FB21E00282579 /* AllDeadStrategy.swift in Sources */,
 				23FAD814193FAFBE00282579 /* GameStateInitiliazerStrategy.swift in Sources */,
 				49260145193F587900FB75E7 /* CellState.swift in Sources */,
+				492601521944A0FD00FB75E7 /* Game.swift in Sources */,
+				4926015019447FD200FB75E7 /* GameInitializer.swift in Sources */,
+				4926014E19447E3A00FB75E7 /* GameStateInitializer.swift in Sources */,
 				498341221910488B00FB8824 /* Dimensions.m in Sources */,
 				49EE6C95190ED476005A76CB /* GameInitializer.m in Sources */,
 				23BA1B79190D19D600C35B2F /* ViewController.m in Sources */,
@@ -385,10 +406,13 @@
 				23BA1B6F190D19D600C35B2F /* main.m in Sources */,
 				49EE6C98190EEA1B005A76CB /* NeighborhoodInitializer.m in Sources */,
 				23FAD818193FB1F900282579 /* RandomStrategy.swift in Sources */,
+				492601581944BBA800FB75E7 /* ViewController.swift in Sources */,
 				49A24F4B193B54A200DD11B2 /* AllDeadStrategy.m in Sources */,
 				49EE6C87190D4928005A76CB /* Game.m in Sources */,
 				49EE6C8D190D49EF005A76CB /* CellState.m in Sources */,
+				4926014C1944734F00FB75E7 /* NeighborhoodInitializer.swift in Sources */,
 				49260149193FA4ED00FB75E7 /* CellNeighborhood.swift in Sources */,
+				492601541944A46400FB75E7 /* GameLoop.swift in Sources */,
 				4983412519115F9000FB8824 /* GameStateInitializer.m in Sources */,
 				49260147193FA27600FB75E7 /* Cell.swift in Sources */,
 			);

@@ -9,38 +9,38 @@
 import Foundation
 
 class CellState {
-    var _currentState = false;
-    var _nextState = false;
+    var currentState = false
+    var nextState = false
     
     init(currentState : Bool){
-        _currentState = currentState;
+        self.currentState = currentState
     }
     
     func isAlive() -> Bool {
-        return _currentState;
+        return currentState
     }
     
     func applyNextState(){
-        _currentState = _nextState;
+        currentState = nextState
     }
     
     func storeNextState(nextState : Bool){
-        _nextState = nextState;
+        self.nextState = nextState
     }
     
     func die(){
-        _currentState = false;
+        currentState = false
     }
     
     func revive(){
-        _currentState = true;
+        currentState = true
     }
     
     class func createAlive() -> CellState{
-        return CellState(currentState: true);
+        return CellState(currentState: true)
     }
     
     class func createDead() -> CellState{
-        return CellState(currentState: false);
+        return CellState(currentState: false)
     }
 }

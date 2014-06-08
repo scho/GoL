@@ -9,11 +9,11 @@
 import Foundation
 
 class Dimensions {
-    var width : Integer = 0;
-    var height : Integer = 0;
+    var width : Int = 0
+    var height : Int = 0
     
-    init(width: Integer, height: Integer){
-        self.width = width;
-        self.height = height;
+    init(width: Int, height: Int){
+        self.width = width
+        self.height = height
     }
 }
