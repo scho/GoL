@@ -8,8 +8,12 @@
 
 import Foundation
 
-class RandomStrategy : GameStateInitializerStrategy {
-    func getState() -> Bool {
-        return arc4random_uniform(2) == 1
+// TODO: Fix nested namespace
+extension GameStateInitializerStrategies {
+    class RandomStrategy : GameStateInitializerStrategy {
+        func getState() -> Bool {
+            return arc4random_uniform(2) == 1
+        }
     }
 }
+

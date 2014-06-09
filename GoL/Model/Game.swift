@@ -8,47 +8,46 @@
 
 import Foundation
 
-class Game {
-    
-    var dimensions : Dimensions
-    var field : Array<Array<Cell>>
-    var gameStateInitializer : GameStateInitializer
-    var description : String{
-        var result = ""
+extension Model {
+    class Game {
         
-        for row in field {
-            for cell in row {
-                result += cell.description
-            }
-            result += "\n"
-        }
+        var dimensions : Dimensions
+        var field : Array<Array<Cell>>
+        var gameStateInitializer : GameStateInitializer
+        var description : String{
+            var result = ""
             
-        return result
-    }
-    
-    
-    init(dimensions : Dimensions, gameStateInitializer : GameStateInitializer){
-        self.dimensions = dimensions
-        self.gameStateInitializer = gameStateInitializer
-        self.field = GameInitializer(initialState: gameStateInitializer.generateGameState(), dimensions: dimensions).initialize()
-    }
-    
-    func tick() {
-        for row in field {
-            for cell in row {
-                cell.storeNextState()
+            for row in field {
+                for cell in row {
+                    result += cell.description
+                }
+                result += "\n"
             }
+            
+            return result
         }
-        for row in field {
-            for cell in row {
-                cell.applyNextState()
-            }
-        }
-    }
-    
-    func addFigure(figure : Figure){
         
+        init(dimensions : Dimensions, gameStateInitializer : GameStateInitializer){
+            self.dimensions = dimensions
+            self.gameStateInitializer = gameStateInitializer
+            self.field = GameInitializer(initialState: gameStateInitializer.generateGameState(), dimensions: dimensions).initialize()
+        }
+        
+        func tick() {
+            for row in field {
+                for cell in row {
+                    cell.storeNextState()
+                }
+            }
+            for row in field {
+                for cell in row {
+                    cell.applyNextState()
+                }
+            }
+        }
+        
+        func addFigure(figure : Figure){
+            
+        }
     }
-    
-    
 }

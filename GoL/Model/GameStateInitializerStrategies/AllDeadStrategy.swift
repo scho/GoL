@@ -8,8 +8,11 @@
 
 import Foundation
 
-class AllDeadStrategy : GameStateInitializerStrategy {
-    func getState() -> Bool {
-        return false
+// TODO: Fix nested namespace
+extension GameStateInitializerStrategies {
+    class AllDeadStrategy : GameStateInitializerStrategy {
+        func getState() -> Bool {
+            return false
+        }
     }
 }
