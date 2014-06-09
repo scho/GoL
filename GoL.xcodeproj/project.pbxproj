@@ -16,7 +16,7 @@
 		4931A18D1945C0DF00186F04 /* GameInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4931A1811945C0DF00186F04 /* GameInitializer.swift */; };
 		4931A18E1945C0DF00186F04 /* GameLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4931A1821945C0DF00186F04 /* GameLoop.swift */; };
 		4931A18F1945C0DF00186F04 /* GameStateInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4931A1831945C0DF00186F04 /* GameStateInitializer.swift */; };
-		4931A1901945C0DF00186F04 /* GameStateInitiliazerStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4931A1841945C0DF00186F04 /* GameStateInitiliazerStrategy.swift */; };
+		4931A1901945C0DF00186F04 /* GameStateInitializerStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4931A1841945C0DF00186F04 /* GameStateInitializerStrategy.swift */; };
 		4931A1911945C0DF00186F04 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4931A1851945C0DF00186F04 /* Model.swift */; };
 		4931A1921945C0DF00186F04 /* NeighborhoodInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4931A1861945C0DF00186F04 /* NeighborhoodInitializer.swift */; };
 		4931A1971945C0F800186F04 /* AllDeadStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4931A1941945C0F800186F04 /* AllDeadStrategy.swift */; };
@@ -51,7 +51,7 @@
 		4931A1811945C0DF00186F04 /* GameInitializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameInitializer.swift; path = Model/GameInitializer.swift; sourceTree = "<group>"; };
 		4931A1821945C0DF00186F04 /* GameLoop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameLoop.swift; path = Model/GameLoop.swift; sourceTree = "<group>"; };
 		4931A1831945C0DF00186F04 /* GameStateInitializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameStateInitializer.swift; path = Model/GameStateInitializer.swift; sourceTree = "<group>"; };
-		4931A1841945C0DF00186F04 /* GameStateInitiliazerStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameStateInitiliazerStrategy.swift; path = Model/GameStateInitiliazerStrategy.swift; sourceTree = "<group>"; };
+		4931A1841945C0DF00186F04 /* GameStateInitializerStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameStateInitializerStrategy.swift; path = Model/GameStateInitializerStrategy.swift; sourceTree = "<group>"; };
 		4931A1851945C0DF00186F04 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = Model/Model.swift; sourceTree = "<group>"; };
 		4931A1861945C0DF00186F04 /* NeighborhoodInitializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NeighborhoodInitializer.swift; path = Model/NeighborhoodInitializer.swift; sourceTree = "<group>"; };
 		4931A1941945C0F800186F04 /* AllDeadStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AllDeadStrategy.swift; path = Model/GameStateInitializerStrategies/AllDeadStrategy.swift; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 				4931A1811945C0DF00186F04 /* GameInitializer.swift */,
 				4931A1821945C0DF00186F04 /* GameLoop.swift */,
 				4931A1831945C0DF00186F04 /* GameStateInitializer.swift */,
-				4931A1841945C0DF00186F04 /* GameStateInitiliazerStrategy.swift */,
+				4931A1841945C0DF00186F04 /* GameStateInitializerStrategy.swift */,
 				4931A1851945C0DF00186F04 /* Model.swift */,
 				4931A1861945C0DF00186F04 /* NeighborhoodInitializer.swift */,
 			);
@@ -288,7 +288,7 @@
 				4931A1881945C0DF00186F04 /* CellNeighborhood.swift in Sources */,
 				4931A1981945C0F800186F04 /* GameStateInitializerStrategies.swift in Sources */,
 				4931A1991945C0F800186F04 /* RandomStrategy.swift in Sources */,
-				4931A1901945C0DF00186F04 /* GameStateInitiliazerStrategy.swift in Sources */,
+				4931A1901945C0DF00186F04 /* GameStateInitializerStrategy.swift in Sources */,
 				49F689AF1945B36000463EE2 /* AppDelegate.swift in Sources */,
 				4931A18E1945C0DF00186F04 /* GameLoop.swift in Sources */,
 				4931A1971945C0F800186F04 /* AllDeadStrategy.swift in Sources */,
